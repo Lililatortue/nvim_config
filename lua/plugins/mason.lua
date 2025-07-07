@@ -23,13 +23,7 @@ return {
     
       local lspconfig = require("lspconfig")
       local handlers = require("plugins.lsp_config")
-
-      for _, server in ipairs({"clangd", "rust_analyzer", "jdtls","lua_ls" }) do
-        lspconfig[server].setup({
-          on_attach = handlers.on_attach,
-          capabilities = handlers.capabilities,
-        })
-      end
     end,
   },
 }
+

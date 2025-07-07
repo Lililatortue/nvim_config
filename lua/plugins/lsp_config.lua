@@ -12,7 +12,12 @@ return {
         signs = true,
         underline = true,
         update_in_insert = false,
-      })
+        float = {
+          source = "always",
+          header ="",
+          prefix = ">>",
+        },
+      })    
 
         local opts = { buffer = bufnr }
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -45,8 +50,8 @@ return {
         cmd = {vim.fn.expand( "~/.local/share/nvim/mason/packages/omnisharp/OmniSharp"),
                 "--languageserver",
                 "--hostPID",
-                tostring(vim.fn.getpid()), },
-                
+                tostring(vim.fn.getpid()),        
+        },
         on_attach = on_attach,
         capabilities = capabilities,
       })
